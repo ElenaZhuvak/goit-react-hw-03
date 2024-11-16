@@ -5,7 +5,6 @@ import SearchBox from "./SearchBox/SearchBox"
 import css from "./App.module.css"
 import { useState } from 'react'
 
-
 const App = () => {
   const [contacts, setContacts] = useState([
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
