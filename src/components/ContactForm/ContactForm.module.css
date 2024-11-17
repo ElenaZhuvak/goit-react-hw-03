@@ -1,0 +1,26 @@
+.wrapper {
+    max-width: 300px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.label {
+    display: flex;
+    flex-direction: column;
+}
+.field {
+    padding: 6px;
+}
+.btn {
+    align-self:center;
+    width:auto;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: lightskyblue;
+}
