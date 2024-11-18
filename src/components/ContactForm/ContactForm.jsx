@@ -1,8 +1,8 @@
 import { Formik, Form, Field } from 'formik'
 import { useId } from 'react'
 import * as Yup from 'yup'
-
 import css from './ContactForm.module.css'
+import { nanoid } from 'nanoid'
 
 const ContactForm = ({onAdd}) => {
   const initialValues = {
@@ -15,22 +15,23 @@ const ContactForm = ({onAdd}) => {
 
   const handleSubmit = (values, actions) => {
     onAdd({
-
+      id: nanoid(),
+      name: values.username,
+      number: values.number
     })
-    console.log(values)
-    actions.resetForm()
+    actions.resetForm() 
   }
 
   const contactsSchema = Yup.object().shape({
-    username: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Required')
-    number: Yup.string()
-    .matches(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number format')
-    .required('Phone number is required'),
+    username: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Required'),
+    number: Yup.string().matches(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number format').required('Phone number is required')
   })
 
   return (
     <div className={css.wrapper}>
-      <Formik validationSchema={contactsSchema} initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik validationSchema={contactsSchema} 
+              initialValues={initialValues} 
+              onSubmit={handleSubmit}>
   
         <Form className={css.form}>
           <label className={css.label} htmlFor={usernameId}>Name</label>

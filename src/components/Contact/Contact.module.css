@@ -1,4 +1,15 @@
 .item {
     border: 1px solid black;
     border-radius: 4px;
+    padding: 10px;
+}
+.itemInfo {
+    
+}
+.p {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }

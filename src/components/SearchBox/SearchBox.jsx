@@ -1,16 +1,11 @@
-import { useState } from "react"
-
-const SearchBox = () => {
-  const [inputValue, setInputValue] = useState('')
-
-  const handleChange = (evt) => {
-    setInputValue(evt.target.value)
-  }
+const SearchBox = ({value, onChange}) => {
 
   return (
     <div>
       <p>Find contacts by name</p>
-      <input type="text" value={inputValue} onChange={handleChange} />
+      <input type="text" 
+              value={value} 
+              onChange={(event) => onChange(event.target.value)} />
     
     </div>
   )
