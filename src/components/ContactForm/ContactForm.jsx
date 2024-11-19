@@ -14,17 +14,18 @@ const ContactForm = ({onAdd}) => {
   const telId = useId()
 
   const handleSubmit = (values, actions) => {
-    onAdd({
+    const newContact = {
       id: nanoid(),
       name: values.username,
       number: values.number
-    })
+    }
+    onAdd(newContact)
     actions.resetForm() 
   }
 
   const contactsSchema = Yup.object().shape({
-    username: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Required'),
-    number: Yup.string().matches(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number format').required('Phone number is required')
+    username: Yup.string().min(3, 'Too short').max(50, 'Too long').required('Required'),
+    number: Yup.string().matches(/^\d{3}-\d{2}-\d{2}$/, 'Invalid phone number format').required('Phone number is required')
   })
 
   return (
