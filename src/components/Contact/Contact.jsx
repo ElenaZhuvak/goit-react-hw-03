@@ -2,10 +2,10 @@ import css from './Contact.module.css'
 
 const Contact = ({data: {id, name, number}, onDelete}) => {
   return (
-    <div className={css.item}>
-        <div className={css.itemInfo}>
-          <p className={css.p}>{name}</p>
-          <p className={css.p}>{number}</p>
+    <div className={css.contactItem}>
+        <div className={css.contactInfo}>
+          <p className={css.contactName}>{name}</p>
+          <p className={css.contactNumber}>{number}</p>
         </div>
         <button onClick={() => {onDelete(id)}}>Delete</button>
     </div>

@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useId } from 'react'
 import * as Yup from 'yup'
 import css from './ContactForm.module.css'
@@ -37,9 +37,11 @@ const ContactForm = ({onAdd}) => {
         <Form className={css.form}>
           <label className={css.label} htmlFor={usernameId}>Name</label>
           <Field className={css.field} type='text' name='username'></Field>
+          <ErrorMessage className={css.error} name= 'username' component='span' />
   
           <label className={css.label} htmlFor={telId}>Number</label>
-          <Field className={css.field} type='tel' name='number'></Field>
+          <Field className={css.field} type='tel' name='number' placeholder='111-11-11'></Field>
+          <ErrorMessage className={css.error} name='number' component='span' />
           
           <button className={css.btn} type='submit'>Add contact</button>
         </Form>

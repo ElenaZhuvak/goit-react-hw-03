@@ -1,15 +1,23 @@
-.item {
+.contactItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
     border: 1px solid black;
     border-radius: 4px;
     padding: 10px;
 }
-.itemInfo {
-    
+.contactInfo {
+    flex-grow: 1;
+    margin-right: 16px;
 }
-.p {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+.contactName {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.contactNumber {
+    color: #121212;
+}
+p {
+    margin: 0;
 }
